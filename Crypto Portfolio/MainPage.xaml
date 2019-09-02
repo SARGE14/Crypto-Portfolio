@@ -62,7 +62,7 @@
         RowDetailsTemplate="{StaticResource RowDetailsTemplate}"
         RowDetailsVisibilityMode="Collapsed"
         SelectionMode="Single"
-        RowGroupHeaderPropertyNameAlternative="Range" ItemsSource="{x:Bind Coins}">
+        RowGroupHeaderPropertyNameAlternative="Range" >
             <controls:DataGrid.Columns>
                 <controls:DataGridTextColumn Header="Номер" Binding="{Binding Id}" Tag="Id"/>
                 <controls:DataGridTextColumn Header="Имя" Binding="{Binding Name}" Tag="Name"/>
@@ -76,9 +76,8 @@
                 <controls:DataGridTextColumn Header="Маржа" Binding="{Binding Margin}" Tag="Margin" />
             </controls:DataGrid.Columns>
         </controls:DataGrid>
-        <Button Content="Загрузить таблицу" Margin="160,401,0,0" Grid.Row="1" VerticalAlignment="Top" Click="Button_Click"/>
         <TextBox x:Name="text" HorizontalAlignment="Left" Margin="343,400,0,0" Grid.Row="1" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="1.483,0.719"/>
         <Button Content="Создать таблицу" Margin="10,400,0,0" Grid.Row="1" VerticalAlignment="Top" Click="Button_Click_1"/>
-        <Button Content="Обновить таблицу" Margin="246,536,0,0" Grid.Row="1" VerticalAlignment="Top" Click="Button_Click_2"/>
+        <Button Content="Обновить таблицу" Margin="161,400,0,0" Grid.Row="1" VerticalAlignment="Top" Click="Button_Click_2"/>
     </Grid>
 </Page>
