@@ -7,7 +7,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="680" Width="1200">
     <Grid>
         <Grid.Resources>
             <DataTemplate x:Key="RowDetailsTemplate">
@@ -43,7 +43,7 @@
         <controls:DataGrid
       Grid.Row="1"
         x:Name="dataGrid"
-        Margin="10,10,10,50"
+        Margin="5"
         HorizontalScrollBarVisibility="Visible"
         VerticalScrollBarVisibility="Visible"
         AlternatingRowForeground="Gray"
@@ -53,7 +53,7 @@
         CanUserSortColumns="False"
         CanUserReorderColumns="True"
         CanUserResizeColumns="True"
-        ColumnHeaderHeight="32"
+        ColumnHeaderHeight="30"
         MaxColumnWidth="400"
         FrozenColumnCount="0"
         GridLinesVisibility="Horizontal"    
@@ -69,15 +69,16 @@
                 <controls:DataGridTextColumn Header="Количество" Binding="{Binding Count}" Tag="Count" />
                 <controls:DataGridTextColumn Header="Цена" Binding="{Binding Price}" Tag="Price" />
                 <controls:DataGridTextColumn Header="Сумма" Binding="{Binding Amount}" Tag="Amount" />
-                <controls:DataGridTextColumn Header="Текущая цена (BTC)" Binding="{Binding CurrentPrice}" Tag="CurrentPrice" />
+                <controls:DataGridTextColumn Header="Текущая цена (BTC)" Binding="{Binding curPrice}" Tag="curPrice" />
                 <controls:DataGridTextColumn Header="Прибыль (BTC)" Binding="{Binding Profit}" Tag="Profit" />
-                <controls:DataGridTextColumn Header="Текущая цена (USD)" Binding="{Binding CurrentPriceUsd}" Tag="CurrentPriceUsd" />
-                <controls:DataGridTextColumn Header="Прибыль (USD)" Binding="{Binding ProfitUsd}" Tag="ProfitUsd" />
+                <controls:DataGridTextColumn Header="Текущая цена (USD)" Binding="{Binding curPriceUsd}" Tag="curPriceUsd" />
+                <controls:DataGridTextColumn Header="Прибыль (USD)" Binding="{Binding profitUsd}" Tag="profitUsd" />
                 <controls:DataGridTextColumn Header="Маржа" Binding="{Binding Margin}" Tag="Margin" />
             </controls:DataGrid.Columns>
         </controls:DataGrid>
-        <TextBox x:Name="text" HorizontalAlignment="Left" Margin="343,400,0,0" Grid.Row="1" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="1.483,0.719"/>
-        <Button Content="Создать таблицу" Margin="10,400,0,0" Grid.Row="1" VerticalAlignment="Top" Click="Button_Click_1"/>
-        <Button Content="Обновить таблицу" Margin="161,400,0,0" Grid.Row="1" VerticalAlignment="Top" Click="Button_Click_2"/>
+        <TextBox x:Name="text" HorizontalAlignment="Left" Margin="346,606,0,0" Grid.Row="1" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" />
+        <Button Content="Добавить монету" Margin="13,606,0,0" Grid.Row="1" VerticalAlignment="Top" Click="Button_Click_1"/>
+        <Button Content="Обновить таблицу" Margin="164,606,0,0" Grid.Row="1" VerticalAlignment="Top" Click="Button_Click_2"/>
+        <Button Content="Button" Margin="501,622,0,0" Grid.Row="1" VerticalAlignment="Top" Click="Button_Click"/>
     </Grid>
 </Page>
