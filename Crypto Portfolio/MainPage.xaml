@@ -62,7 +62,7 @@
         RowDetailsTemplate="{StaticResource RowDetailsTemplate}"
         RowDetailsVisibilityMode="Collapsed"
         SelectionMode="Single"
-        RowGroupHeaderPropertyNameAlternative="Range" CellEditEnded="DataGrid_CellEditEnded" >
+        RowGroupHeaderPropertyNameAlternative="Range"  >
             <controls:DataGrid.Columns>
                 <controls:DataGridTextColumn Header="Номер" Binding="{Binding Id}" Tag="Id"/>
                 <controls:DataGridTextColumn Header="Имя" Binding="{Binding Name}" Tag="Name"/>

@@ -238,8 +238,6 @@ namespace Crypto_Portfolio
         }
         public void updateDbDg()
         {
-            dataGrid.ItemsSource = null;
-            dataGrid.ItemsSource = Coins;
             var localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
             var folderPath = localFolder.Path;
             var filePath = Path.Combine(folderPath, this.DBName);
@@ -256,14 +254,6 @@ namespace Crypto_Portfolio
             }
             dataGrid.ItemsSource = null;
             dataGrid.ItemsSource = Coins;
-        }
-
-        private void DataGrid_CellEditEnded(object sender, Microsoft.Toolkit.Uwp.UI.Controls.DataGridCellEditEndedEventArgs e)
-        {
-
-         
-
-
         }
     }
 }
