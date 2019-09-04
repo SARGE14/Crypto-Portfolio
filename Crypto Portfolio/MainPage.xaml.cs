@@ -46,6 +46,12 @@ namespace Crypto_Portfolio
         public bool errorHitBtc;
         public bool errorYobit;
         public double newPrice;
+        double btc;
+        double sumUsd = 0;
+        double sumBtc = 0;
+        double total = 0;
+        double totalMargin;
+        bool updateTotal;
         RootObject json;
         public class RootObject
         {
@@ -171,7 +177,6 @@ namespace Crypto_Portfolio
         {
             string urlExchange;
             double result;
-            double btc;
             /*HitBTC*/
             exchange = "HitBTC";
             urlExchange = "https://api.hitbtc.com/api/2/public/ticker/";
@@ -211,9 +216,23 @@ namespace Crypto_Portfolio
                     Coins[i].curPrice = newPrice.ToString("F8");
                 }
                 result = Coins[i].Count * double.Parse(Coins[i].curPrice) - double.Parse(Coins[i].Amount);
+                sumBtc += result;
                 Coins[i].Profit = result.ToString("F8");
+
                 result = (double.Parse(Coins[i].curPrice) / double.Parse(Coins[i].Price)-1)*100;
                 Coins[i].Margin = result.ToString("F2") + "%";
+
+                result = double.Parse(Coins[i].curPrice) * btc;
+                Coins[i].curPriceUsd = result.ToString("F2") + " USD";
+
+                result = double.Parse(Coins[i].Profit) * btc;
+                sumUsd += result;
+                Coins[i].profitUsd= result.ToString("F2") + " USD";
+
+                total += double.Parse(Coins[i].Amount);
+
+                totalMargin = (sumBtc / total)*100;
+                updateTotal = true;
             }
             updateDbDg();
         }
@@ -230,6 +249,21 @@ namespace Crypto_Portfolio
                 var coin = Coins;
                 col.Update(coin);
             }
+            if (total !=0 && updateTotal)
+            {
+                Coins.Add(new Coin { Name = "Суммы", profitUsd = sumUsd.ToString("F2")+ " USD", Profit = sumBtc.ToString("F8"), Amount = total.ToString("F8"), Margin = totalMargin.ToString("F2") + "%" });
+                updateTotal = false;
+            }
+            dataGrid.ItemsSource = null;
+            dataGrid.ItemsSource = Coins;
+        }
+
+        private void DataGrid_CellEditEnded(object sender, Microsoft.Toolkit.Uwp.UI.Controls.DataGridCellEditEndedEventArgs e)
+        {
+
+         
+
+
         }
     }
 }

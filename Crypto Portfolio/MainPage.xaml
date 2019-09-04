@@ -7,7 +7,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="680" Width="1200">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="700" Width="1200">
     <Grid>
         <Grid.Resources>
             <DataTemplate x:Key="RowDetailsTemplate">
@@ -62,7 +62,7 @@
         RowDetailsTemplate="{StaticResource RowDetailsTemplate}"
         RowDetailsVisibilityMode="Collapsed"
         SelectionMode="Single"
-        RowGroupHeaderPropertyNameAlternative="Range" >
+        RowGroupHeaderPropertyNameAlternative="Range" CellEditEnded="DataGrid_CellEditEnded" >
             <controls:DataGrid.Columns>
                 <controls:DataGridTextColumn Header="Номер" Binding="{Binding Id}" Tag="Id"/>
                 <controls:DataGridTextColumn Header="Имя" Binding="{Binding Name}" Tag="Name"/>
@@ -76,9 +76,9 @@
                 <controls:DataGridTextColumn Header="Маржа" Binding="{Binding Margin}" Tag="Margin" />
             </controls:DataGrid.Columns>
         </controls:DataGrid>
-        <TextBox x:Name="text" HorizontalAlignment="Left" Margin="346,606,0,0" Grid.Row="1" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" />
-        <Button Content="Добавить монету" Margin="13,606,0,0" Grid.Row="1" VerticalAlignment="Top" Click="Button_Click_1"/>
-        <Button Content="Обновить таблицу" Margin="164,606,0,0" Grid.Row="1" VerticalAlignment="Top" Click="Button_Click_2"/>
-        <Button Content="Button" Margin="501,622,0,0" Grid.Row="1" VerticalAlignment="Top" Click="Button_Click"/>
+        <TextBox x:Name="text" HorizontalAlignment="Left" Margin="333,653,0,0" Grid.Row="1" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" />
+        <Button Content="Добавить монету" Margin="0,653,0,0" Grid.Row="1" VerticalAlignment="Top" Click="Button_Click_1"/>
+        <Button Content="Обновить таблицу" Margin="151,653,0,0" Grid.Row="1" VerticalAlignment="Top" Click="Button_Click_2"/>
+        <Button Content="Обновить цены" Margin="487,653,0,0" Grid.Row="1" VerticalAlignment="Top" Click="Button_Click"/>
     </Grid>
 </Page>
