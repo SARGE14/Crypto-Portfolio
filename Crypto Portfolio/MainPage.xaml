@@ -77,8 +77,9 @@
             </controls:DataGrid.Columns>
         </controls:DataGrid>
         <TextBox x:Name="text" HorizontalAlignment="Left" Margin="333,653,0,0" Grid.Row="1" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" />
-        <Button Content="Добавить монету" Margin="0,653,0,0" Grid.Row="1" VerticalAlignment="Top" Click="Button_Click_1"/>
+        <Button Content="Добавить монету" Margin="10,653,0,0" Grid.Row="1" VerticalAlignment="Top" Click="Button_Click_1"/>
         <Button Content="Обновить таблицу" Margin="151,653,0,0" Grid.Row="1" VerticalAlignment="Top" Click="Button_Click_2"/>
         <Button Content="Обновить цены" Margin="487,653,0,0" Grid.Row="1" VerticalAlignment="Top" Click="Button_Click"/>
+        <Button x:Name="deleteButton" Content="Удалить монету" Margin="1021,653,0,0" Grid.Row="1" VerticalAlignment="Top" Click="deleteButton_Click"/>
     </Grid>
 </Page>

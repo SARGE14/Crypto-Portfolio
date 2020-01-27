@@ -105,8 +105,7 @@ namespace Crypto_Portfolio
                              Name = "XRP", Count = 2000, Price = "0,00002606", Amount = "1"
                          }
               };
-         //   Coins.Add(new Coin { Id = count+1, Name = "XRPs", Count = 2000, Price = "0,00002606", Amount = "1"});
-            
+            //   Coins.Add(new Coin { Id = count+1, Name = "XRPs", Count = 2000, Price = "0,00002606", Amount = "1"});
 
             var localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
             var folderPath = localFolder.Path;
@@ -131,6 +130,7 @@ namespace Crypto_Portfolio
             dataGrid.ItemsSource = null;
             dataGrid.ItemsSource = Coins;
         }
+
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             double result;
@@ -233,6 +233,7 @@ namespace Crypto_Portfolio
 
                 totalMargin = (sumBtc / total)*100;
                 updateTotal = true;
+
             }
             updateDbDg();
         }
@@ -249,11 +250,16 @@ namespace Crypto_Portfolio
             }
             if (total !=0 && updateTotal)
             {
-                Coins.Add(new Coin { Name = "Суммы", profitUsd = sumUsd.ToString("F2")+ " USD", Profit = sumBtc.ToString("F8"), Amount = total.ToString("F8"), Margin = totalMargin.ToString("F2") + "%" });
+                Coins.Add(new Coin {Name = "Суммы", profitUsd = sumUsd.ToString("F2")+ " USD", Profit = sumBtc.ToString("F8"), Amount = total.ToString("F8"), Margin = totalMargin.ToString("F2") + "%" });
                 updateTotal = false;
             }
             dataGrid.ItemsSource = null;
             dataGrid.ItemsSource = Coins;
+        }
+
+        private void deleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            Coins.RemoveAt(Coins.Count-1);
         }
     }
 }
